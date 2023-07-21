@@ -127,9 +127,6 @@ hr {
 .video-container .mobile{
     width: 40%;
 }
-.modal section {
-    margin-top: 32px;
-}
 
 .about-me h4 {
     margin-bottom: 0.5em;
@@ -247,13 +244,18 @@ hr {
 }
 
 .modal-content {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     /* padding: 48px; */
     background-color: white;
     margin-top: 100px;
 
 }
+
+.modal section {
+    margin-top: 32px;
+}
+
 
 .modal-close {
     /* position: relative; */
