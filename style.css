@@ -131,16 +131,14 @@ hr {
 
 .video-container {
     margin-bottom: 48px;
+    width: 80%;
 }
 .video-container h4{
    font-weight: 400;
    margin-bottom: 12px;
 }
-.video-container video{
-    width: 90%;
-}
 .video-container img{
-    width: 90%;
+    width: 100%;
 }
 .video-container .mobile{
     width: 40%;
@@ -492,7 +490,7 @@ a {
         width: 70%;
     }
     .modal-content {
-        width: 70%;
+        width: 60%;
     }
 }
 
@@ -502,7 +500,7 @@ a {
         width: 60%;
     }
     .modal-content {
-        width: 70%;
+        width: 60%;
     }
 }
 
