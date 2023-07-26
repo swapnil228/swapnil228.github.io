@@ -1,8 +1,13 @@
+import data from './data.js'
+
+console.log(data);
+
 const navItems = document.getElementsByClassName('nav-item')
   const contentItems = document.getElementsByClassName("content-item")
   const uxProjectCards = document.getElementsByClassName("ux-project-card")
   const modalProjectItems = document.getElementsByClassName("modal-project-item")
   const modal = document.querySelector('.modal')
+  const modalContent = document.querySelector('.modal-content')
   const wrapper = document.querySelector('.wrapper')
   const body = document.querySelector('body')
   const content = document.querySelector('.content')
@@ -10,9 +15,7 @@ const navItems = document.getElementsByClassName('nav-item')
   const viewMoreUxProjects = document.querySelector('.view-more-ux-projects')
   const viewMoreUxProjectsBtn = document.querySelector('.view-more-ux-projects-btn')
   const viewMoreAboutMeBtn = document.querySelector('.view-more-about-me-btn')
-  const pencilSketches = document.querySelector('.pencil-sketches')
-  const digitalArt = document.querySelector('.digital-art')
-  const penSketches = document.querySelector('.pen-sketches')
+
   // const artworkDetail = document.querySelector('.artwork-detail')
 
   let uxProjectNumberVisible = 1
@@ -35,6 +38,10 @@ const navItems = document.getElementsByClassName('nav-item')
   }
 
   const addArtwork = () => {
+    const pencilSketches = document.querySelector('.pencil-sketches')
+    const digitalArt = document.querySelector('.digital-art')
+    const penSketches = document.querySelector('.pen-sketches')
+    const practiceSketches = document.querySelector('.practice')
     const totalArtwork = 32
     for (let i = 11; i <= 17; i++) {
 
@@ -62,6 +69,14 @@ const navItems = document.getElementsByClassName('nav-item')
       art.classList.add('art-img')
       penSketches.append(art)
     }
+
+    for (let i = 33; i <= 37; i++) {
+
+      let art = document.createElement('img')
+      art.setAttribute('src', 'public/artwork/Slice ' + i + '.png')
+      art.classList.add('art-img')
+      practiceSketches.append(art)
+    }
   }
 
   // const showArtDetail = (e) => {
@@ -73,12 +88,19 @@ const navItems = document.getElementsByClassName('nav-item')
   // }
 
   const openModal = () => {
-    modal.classList.add('modal-visible')
+    modal.classList.add('display-block')
+    setTimeout(() => {
+      modalContent.classList.add('modal-content-show')
+    }, 100)
     wrapper.classList.add('stop-scrolling')
   }
 
   const closeModal = () => {
-    modal.classList.remove('modal-visible')
+    modalContent.classList.remove('modal-content-show')
+    setTimeout(() => {
+      modal.classList.remove('display-block')
+    }, 200)
+    // modalContent.classList.remove('modal-content-show')
     wrapper.classList.remove('stop-scrolling')
   }
 
@@ -102,7 +124,7 @@ const navItems = document.getElementsByClassName('nav-item')
     openModal()
     uxProjectNumberVisible = projectNumber
     const uxProjectDetails = document.querySelector(`.ux-project-${uxProjectNumberVisible}`)
-    uxProjectDetails.classList.add('modal-item-visible')
+    uxProjectDetails.classList.add('display-block')
     content.classList.add('hide')
     setModalContentHeight()
     window.scrollTo(0, 0)
@@ -110,46 +132,48 @@ const navItems = document.getElementsByClassName('nav-item')
 
   function hideUXProjectDetails(projectNumber) {
     closeModal()
+    
     const uxProjectDetails = document.querySelector(`.ux-project-${uxProjectNumberVisible}`)
-    uxProjectDetails.classList.remove('modal-item-visible')
+
+    setTimeout(() => {
+      uxProjectDetails.classList.remove('display-block')
+    }, 200)
+
     content.classList.remove('hide')
     window.scrollTo(0, 0)
   }
 
-  const selectItem = function (str) {
+  const selectItem = (num) => {
+    console.log(num);
     for (var i = 0; i < navItems.length; i++) {
       navItems[i].classList.remove("selected");
     }
-    this.classList.add("selected");
+    navItems[num].classList.add("selected");
 
     for (var i = 0; i < contentItems.length; i++) {
       contentItems[i].classList.add("hide");
     };
 
-    switch (str) {
-      case 'about-me':
+    selectedContentItem = num
+
+    switch (selectedContentItem) {
+      case 0:
         contentItems[0].classList.remove('hide');
-        selectedContentItem = 0
         break;
-      case 'ux':
+      case 1:
         contentItems[1].classList.remove('hide');
-        selectedContentItem = 1
         break;
-      case 'game-dev':
+      case 2:
         contentItems[2].classList.remove('hide');
-        selectedContentItem = 2
         break;
-      case 'dev-apps':
+      case 3:
         contentItems[3].classList.remove('hide');
-        selectedContentItem = 3
         break;
-      case 'musings':
+      case 4:
         contentItems[4].classList.remove('hide');
-        selectedContentItem = 4
         break;
-      case 'artwork':
+      case 5:
         contentItems[5].classList.remove('hide');
-        selectedContentItem = 5
         break;
       default:
         contentItems[0].classList.remove('hide');
@@ -166,13 +190,17 @@ const navItems = document.getElementsByClassName('nav-item')
     console.log("Nect");
     let currentProjectNumber = uxProjectNumberVisible
     uxProjectNumberVisible = currentProjectNumber + 1
+
     if (uxProjectNumberVisible > uxProjectCards.length) {
       uxProjectNumberVisible = 1
     }
+
     const uxProjectDetails = document.querySelector(`.ux-project-${uxProjectNumberVisible}`)
-    uxProjectDetails.classList.add('modal-item-visible')
     const currentUxProjectDetails = document.querySelector(`.ux-project-${currentProjectNumber}`)
-    currentUxProjectDetails.classList.remove('modal-item-visible')
+
+    uxProjectDetails.classList.add('display-block')
+    currentUxProjectDetails.classList.remove('display-block')
+
     setModalContentHeight()
     window.scrollTo(0, 0)
   }
@@ -181,28 +209,38 @@ const navItems = document.getElementsByClassName('nav-item')
     console.log("Prev");
     let currentProjectNumber = uxProjectNumberVisible
     uxProjectNumberVisible = currentProjectNumber - 1
+
     if (uxProjectNumberVisible < 1) {
       uxProjectNumberVisible = uxProjectCards.length
     }
+
     const uxProjectDetails = document.querySelector(`.ux-project-${uxProjectNumberVisible}`)
-    uxProjectDetails.classList.add('modal-item-visible')
     const currentUxProjectDetails = document.querySelector(`.ux-project-${currentProjectNumber}`)
-    currentUxProjectDetails.classList.remove('modal-item-visible')
+
+    uxProjectDetails.classList.add('display-block')
+    currentUxProjectDetails.classList.remove('display-block')
+
     setModalContentHeight()
     window.scrollTo(0, 0)
   }
 
   function init() {
 
+    for (let i = 0; i < navItems.length; i++) {
+      navItems[i].addEventListener('click', () => selectItem(i))
+    };
+
     for (var i = 0; i < contentItems.length; i++) {
       contentItems[i].classList.add("hide");
     };
 
+    document.querySelector(".modal-close button").addEventListener('click', hideUXProjectDetails)
+    document.querySelector(".previous-project-btn").addEventListener('click', goToPreviousUXProject)
+    document.querySelector(".next-project-btn").addEventListener('click', goToNextUXProject)
+
     contentItems[0].classList.remove("hide")
     viewMoreAboutMe.classList.add("hide")
     viewMoreUxProjects.classList.add("hide")
-
-
 
     selectedContentItem = 0
 

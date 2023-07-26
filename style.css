@@ -241,17 +241,14 @@ hr {
 
 
 .modal {
-    visibility: hidden;
+    display: none;
     position: absolute;
     top: 0px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.651);
     margin: 0 auto;
     margin-bottom: 100px;
-}
-
-.modal-visible {
-    visibility: visible;
+    transition: all 0.25s ease-in;
 }
 
 .modal-footer{
@@ -265,8 +262,31 @@ hr {
     /* padding: 48px; */
     background-color: white;
     margin-top: 100px;
+    transform: translateY(-40px);
+    transition: all 0.25s ease-in;
+    opacity: 0;
 
 }
+
+.modal-content-show {
+        opacity: 1;
+        transform: translateY(0px);
+}
+
+.modal-item {
+    display: none;
+    margin: 0 auto;
+    width: 80%;
+    padding: 80px;
+    border: 1px solid rgb(182, 175, 175);
+    transition: 0.25s ease-in;
+}
+
+.modal-item-show {
+    
+}
+
+
 
 .modal section {
     margin-top: 32px;
@@ -364,7 +384,10 @@ a {
     gap: 24px;
 }
 
-.next-prev {
+.previous-project-btn {
+    flex: 1 1 0;
+}
+.next-project-btn {
     flex: 1 1 0;
 }
 
@@ -375,25 +398,12 @@ a {
     height: auto;
 }
 
-.hide {
-    display: none;
-}
 
 /* .content-item {
     display: none;
 } */
 
-.modal-item {
-    display: none;
-    margin: 0 auto;
-    width: 80%;
-    padding: 80px;
-    border: 1px solid rgb(182, 175, 175);
-}
 
-.modal-item-visible {
-    display: block;
-}
 
 .ux-project-card {
     display: flex;
@@ -436,6 +446,18 @@ a {
 
 .ux-project-card p {
     color: #444;
+}
+
+.hide {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.display-block {
+    display: block;
 }
 
 

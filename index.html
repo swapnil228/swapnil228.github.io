@@ -27,12 +27,12 @@
 
       <div class="nav">
         <ul>
-          <li><a class="nav-item selected" onclick="selectItem.call(this, 'about-me')">About Me</a></li>
-          <li><a class="nav-item" onclick="selectItem.call(this, 'ux')">UX Projects</a></li>
-          <li><a class="nav-item" onclick="selectItem.call(this, 'game-dev')">Game dev</a></li>
-          <li><a class="nav-item" onclick="selectItem.call(this, 'dev-apps')">Dev apps</a></li>
-          <li><a class="nav-item" onclick="selectItem.call(this, 'musings')">Musings</a></li>
-          <li><a class="nav-item" onclick="selectItem.call(this, 'artwork')">Artwork</a></li>
+          <li><a class="nav-item selected">About Me</a></li>
+          <li><a class="nav-item" >UX Projects</a></li>
+          <li><a class="nav-item" >Game dev</a></li>
+          <li><a class="nav-item" >Dev apps</a></li>
+          <li><a class="nav-item" >Musings</a></li>
+          <li><a class="nav-item" >Artwork</a></li>
         </ul>
       </div>
 
@@ -88,6 +88,8 @@
                   <li>Client workshops</li>
                   <li>UX Architecture</li>
                   <li>Design Management</li>
+                  <li>User Journey mapping</li>
+                  <li>Service Design blueprints</li>
                   <li>Lean UX</li>
                   <li>Interaction design</li>
                   <li>Information Architecture</li>
@@ -102,6 +104,7 @@
                   <li>Gathering product requirements</li>
                   <li>Writing good PRDs</li>
                   <li>Problem solving</li>
+                  <li>Competitive Benchmarking</li>
                   <li>Feature Prioritization</li>
                   <li>Value proposition canvas workshops</li>
                   <li>Systems thinking</li>
@@ -113,6 +116,8 @@
             <h4>Online Courses</h4>
             <ul>
               <li class="disc">Complete C# Unity Developer 2D - By Ben Tristem & Rick Davidson - Udemy</li>
+              <li class="disc">Unity Ultimate guide to game development - By Jonathan Weinberger - Udemy</li>
+              <li class="disc">Learn to program by making a 2D platformer in Unity & c# - Udemy</li>
               <li class="disc">React - By Maximilian Schwarzmuller - Udemy</li>
               <li class="disc">Angular and NodeJS - The MEAN Stack Guide - By Maximilian Schwarzmuller - Udemy</li>
               <li class="disc">Web developer Bootcamp Online - By Colt Steel - Udemy</li>
@@ -356,6 +361,8 @@
           <div class="digital-art"></div>
           <h4>Pen Sketches</h4>
           <div class="pen-sketches"></div>
+          <h4>Practice sketches</h4>
+          <div class="practice"></div>
         </div>
       </div>
     </div>
@@ -363,12 +370,10 @@
 
   <div class="modal">
 
-
-
     <div class="modal-content">
 
       <div class="modal-close">
-        <button class="portfolio-btn" onclick='hideUXProjectDetails()'>Close</button>
+        <button class="portfolio-btn">Close</button>
       </div>
 
       <div class="modal-item ux-project-1">
@@ -827,8 +832,8 @@
 
 
       <div class="btn-container">
-        <button class="portfolio-btn next-prev" onclick="goToPreviousUXProject()">Previous</button>
-        <button class="portfolio-btn next-prev" onclick='goToNextUXProject()'>Next</button>
+        <button class="portfolio-btn previous-project-btn">Previous</button>
+        <button class="portfolio-btn next-project-btn">Next</button>
       </div>
     </div>
 
@@ -844,6 +849,6 @@
 </body>
 
 <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
-<script src="index.js"></script>
+<script type="module" src="index.js"></script>
 
 </html>
