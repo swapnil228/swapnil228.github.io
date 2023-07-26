@@ -1,7 +1,3 @@
-import data from './data.js'
-
-console.log(data);
-
 const navItems = document.getElementsByClassName('nav-item')
   const contentItems = document.getElementsByClassName("content-item")
   const uxProjectCards = document.getElementsByClassName("ux-project-card")
@@ -22,15 +18,7 @@ const navItems = document.getElementsByClassName('nav-item')
   let selectedContentItem = 0
 
 
-  viewMoreAboutMeBtn.addEventListener('click', () => {
-    viewMoreAboutMeBtn.classList.add('hide')
-    showMoreContent(viewMoreAboutMe)
-  })
 
-  viewMoreUxProjectsBtn.addEventListener('click', () => {
-    viewMoreUxProjectsBtn.classList.add('hide')
-    showMoreContent(viewMoreUxProjects)
-  })
 
   const showMoreContent = (elem) => {
     elem.classList.remove('hide')
@@ -224,19 +212,40 @@ const navItems = document.getElementsByClassName('nav-item')
     window.scrollTo(0, 0)
   }
 
-  function init() {
-
+  const addEventListeners = () => {
     for (let i = 0; i < navItems.length; i++) {
       navItems[i].addEventListener('click', () => selectItem(i))
     };
 
+    document.querySelector(".modal-close button").addEventListener('click', hideUXProjectDetails)
+
+    document.querySelector(".previous-project-btn").addEventListener('click', goToPreviousUXProject)
+
+    document.querySelector(".next-project-btn").addEventListener('click', goToNextUXProject)
+
+    for (let i = 0; i < uxProjectCards.length; i++) {
+      uxProjectCards[i].addEventListener('click', () => showUXProjectDetails(i + 1))
+    }
+
+    viewMoreAboutMeBtn.addEventListener('click', () => {
+      viewMoreAboutMeBtn.classList.add('hide')
+      showMoreContent(viewMoreAboutMe)
+    })
+  
+    viewMoreUxProjectsBtn.addEventListener('click', () => {
+      viewMoreUxProjectsBtn.classList.add('hide')
+      showMoreContent(viewMoreUxProjects)
+    })
+
+  }
+
+  const init = () => {
+
+    addEventListeners()
+
     for (var i = 0; i < contentItems.length; i++) {
       contentItems[i].classList.add("hide");
     };
-
-    document.querySelector(".modal-close button").addEventListener('click', hideUXProjectDetails)
-    document.querySelector(".previous-project-btn").addEventListener('click', goToPreviousUXProject)
-    document.querySelector(".next-project-btn").addEventListener('click', goToNextUXProject)
 
     contentItems[0].classList.remove("hide")
     viewMoreAboutMe.classList.add("hide")
@@ -245,13 +254,7 @@ const navItems = document.getElementsByClassName('nav-item')
     selectedContentItem = 0
 
     setMainContentHeight()
-
-    for (let i = 0; i < uxProjectCards.length; i++) {
-      uxProjectCards[i].addEventListener('click', () => showUXProjectDetails(i + 1))
-    }
-
     addArtwork()
-
   }
 
   init()
