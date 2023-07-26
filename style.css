@@ -32,6 +32,10 @@ a {
     user-select: none;
 }
 
+hr {
+    border-color: #ddd !important;
+}
+
 h3, h4, p {
     margin: 0;
 }
@@ -129,6 +133,35 @@ hr {
     border-bottom: 1px solid black;
 }
 
+.about-me h4 {
+    margin-bottom: 0.5em;
+}
+
+.about-me a{
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    transition: none;
+    text-decoration: underline;
+}
+
+.about-me p{
+    margin-bottom: 12px;
+}
+
+
+.profile-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: auto;
+}
+
+.profile-icons a{
+   margin-top: 12px;
+   margin-bottom: 12px;
+}
+
 .video-container {
     margin-bottom: 48px;
     width: 80%;
@@ -144,21 +177,6 @@ hr {
     width: 40%;
 }
 
-.about-me h4 {
-    margin-bottom: 0.5em;
-}
-
-.about-me a{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    transition: none;
-    text-decoration: underline;
-}
-
-.about-me p{
-    margin-bottom: 12px;
-}
 
 .disc {
     list-style: disc;
