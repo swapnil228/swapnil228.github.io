@@ -235,7 +235,7 @@ hr {
 .ux-project-image-container {
     margin-top: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .ux-project-img {
