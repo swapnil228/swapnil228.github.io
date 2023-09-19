@@ -14,6 +14,11 @@ const viewMoreUxProjectsBtn = document.querySelector(
 );
 const viewMoreAboutMeBtn = document.querySelector(".view-more-about-me-btn");
 
+// const svg1 = `<svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M1 1.5V21.5H18V1.5H1Z" stroke="#3F80E3" stroke-width="2"/>
+// </svg>
+// `
+
 // const artworkDetail = document.querySelector('.artwork-detail')
 
 let uxProjectNumberVisible = 1;
@@ -231,6 +236,20 @@ const addEventListeners = () => {
   for (let i = 0; i < navItems.length; i++) {
     navItems[i].addEventListener("click", () => selectItem(i));
   }
+
+  // navItems[1].parentElement.querySelector(".svg-container").innerHTML = svg1
+
+  // navItems[1].addEventListener("mouseenter", (e) => {
+  //   // console.log(document.querySelector('svg'));
+  //   console.log(e.target.parentElement.querySelector(".svg-container"));
+  
+  //   document.querySelector('svg').setAttribute('class','svg-end')
+  // })
+  // navItems[1].addEventListener("mouseleave", (e) => {
+  //   // console.log(document.querySelector('svg'));
+  //   // e.target.parentElement.querySelector(".svg-container").innerHTML = ""
+  //   document.querySelector('svg').setAttribute('class','svg-start')
+  // })
 
   document
     .querySelector(".modal-close button")

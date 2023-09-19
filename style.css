@@ -48,6 +48,7 @@ h4 {
     display: flex;
     margin: 0 auto;
     font-size: 28px;
+    margin-bottom: 16px;
 }
 
 
@@ -166,6 +167,11 @@ hr {
     margin-bottom: 48px;
     width: 80%;
 }
+
+.video-container video {
+    width: 100%
+}
+
 .video-container h4{
    font-weight: 400;
    margin-bottom: 12px;
@@ -351,7 +357,25 @@ a {
     border-right: 1px solid black;
 }
 
+/* svg {
+    position: absolute;
+    opacity: 1;
+    left: 40%;
+    top: 7px;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: all 0.5s ease-in-out;
+}
+.svg-end {
+    opacity: 1;
+    stroke-dashoffset: 10;
+}
+.svg-start {
+    opacity: 1;
+    stroke-dashoffset: 100;
+} */
 .nav li {
+    /* position: relative; */
     margin-right: 16px;
 }
 
@@ -490,6 +514,7 @@ a {
 
     .mobile-message {
         display: flex;
+        flex-direction: column;
     }
 }
 
