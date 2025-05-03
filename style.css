@@ -199,6 +199,9 @@ hr {
     margin-bottom: 8px;
 }
 
+.about-me .expertise {
+    margin-bottom: 8px;
+}
 .artwork div{
     display: flex;
     flex-direction: row;
@@ -261,7 +264,9 @@ hr {
     /* margin-right: 12px; */
 }
 
-
+#telus-logo{
+    width: 150px;
+}
 
 
 .modal {
