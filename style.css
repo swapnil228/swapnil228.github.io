@@ -202,6 +202,10 @@ hr {
 .about-me .expertise {
     margin-bottom: 8px;
 }
+
+.artwork {
+    width: 110%;
+}
 .artwork div{
     display: flex;
     flex-direction: row;
@@ -219,8 +223,8 @@ hr {
 }
 
 .art-img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
 }
 
