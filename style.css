@@ -138,6 +138,10 @@ hr {
     margin-bottom: 0.5em;
 }
 
+.about-me .role {
+    margin-top: 12px;
+}
+
 .about-me a{
     margin-top: 20px;
     margin-bottom: 8px;
@@ -147,6 +151,7 @@ hr {
 }
 
 .about-me p{
+    font-size: 14px;
     margin-bottom: 12px;
 }
 
@@ -241,7 +246,12 @@ hr {
 }
 
 .skills ul {
+    font-size: 14px;
 list-style: disc;
+}
+
+.courses ul{
+    font-size: 14px;
 }
 
 .ux-project-image-container {
