@@ -104,6 +104,7 @@ hr {
     box-shadow: 5px 7px #000000; */
 }
 
+
 .header {
     display: flex;
     flex-direction: row;
@@ -154,7 +155,10 @@ hr {
 .banner {
     border-radius: 8px;
     padding: 20px;
-    background-color: #f3f3f3;
+    background-color: #ffffff;
+    border: 1px solid #00000040;
+    border-color: #00000040;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-me p{
