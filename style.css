@@ -435,11 +435,13 @@ a {
 }
 
 .nav li a {
+    font-size: 18px;
     width: 100%;
     text-align: right;
     display: block;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 8px;
     color: #2e2e2e;
 }
 
@@ -450,6 +452,7 @@ a {
 .nav li a.selected {
     font-weight: 700;
     color: #000000;
+    background-color: rgba(202, 203, 255, 0.568);
 }
 
 .portfolio-btn {
